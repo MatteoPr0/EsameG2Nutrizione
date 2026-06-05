@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCampus Nutrizione G2 - Quiz Interattivo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Background elements for decorative blur -->
+    <div class="bg-blur bg-blur-1"></div>
+    <div class="bg-blur bg-blur-2"></div>
+
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="logo-area">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                </span>
+                <div class="logo-text">
+                    <h1>eCampus Nutrizione G2</h1>
+                    <span class="sub-logo">Nutrizione Clinica e Applicata</span>
+                </div>
+            </div>
+            
+            <!-- Overall Stats Summary -->
+            <div class="header-stats">
+                <div class="stat-bubble" id="overall-progress-bubble">
+                    <span class="stat-label">Completato</span>
+                    <span class="stat-value" id="overall-percent">0%</span>
+                    <div class="mini-bar-container"><div class="mini-bar" id="overall-percent-bar" style="width: 0%"></div></div>
+                </div>
+                <div class="stat-bubble" id="accuracy-bubble">
+                    <span class="stat-label">Accuratezza</span>
+                    <span class="stat-value text-correct" id="overall-accuracy">0%</span>
+                </div>
+                <div class="stat-bubble" id="score-bubble">
+                    <span class="stat-label">Punti</span>
+                    <span class="stat-value" id="overall-score">0 / 0</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <!-- Theme Toggle Button -->
+                <button class="icon-btn" id="theme-toggle" aria-label="Cambia tema" title="Cambia tema">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Workspace Area -->
+        <main class="workspace-grid">
+            <!-- Sidebar Panel: Sections and Settings -->
+            <aside class="sidebar-panel">
+                <div class="sidebar-header">
+                    <h2>Sezioni del Corso</h2>
+                    <span class="badge" id="total-questions-badge">152 Domande</span>
+                </div>
+                
+                <nav class="sections-nav" id="sections-list" aria-label="Sezioni del Quiz">
+                    <!-- Section links will be dynamically populated here -->
+                    <button class="section-link active" data-section-id="all">
+                        <span class="sec-num">0</span>
+                        <div class="sec-info">
+                            <span class="sec-title">Tutte le Domande</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 0%"></div></div>
+                        </div>
+                        <span class="sec-count" id="sec-count-all">0/152</span>
+                    </button>
+                    <button class="section-link" data-section-id="difficult" id="sec-difficult-btn">
+                        <span class="sec-num">★</span>
+                        <div class="sec-info">
+                            <span class="sec-title">Domande Difficili</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 0%"></div></div>
+                        </div>
+                        <span class="sec-count" id="sec-count-difficult">0/0</span>
+                    </button>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <button class="btn btn-outline btn-block" id="reset-progress-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                        Resetta Progressi
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Content Panel: Quiz and Review Views -->
+            <section class="content-panel">
+                <!-- Tab Selector -->
+                <div class="tabs-header">
+                    <div class="tabs-buttons">
+                        <button class="tab-btn active" id="tab-quiz" data-tab="quiz-view">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Modalità Quiz
+                        </button>
+                        <button class="tab-btn" id="tab-review" data-tab="review-view">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            Studio / Elenco Domande
+                        </button>
+                    </div>
+
+                    <!-- Quick Quiz Controls -->
+                    <div class="quiz-controls-bar" id="quiz-options-controls">
+                        <label class="control-checkbox">
+                            <input type="checkbox" id="shuffle-toggle">
+                            <span class="checkbox-custom"></span>
+                            <span>Mescola domande</span>
+                        </label>
+                        <label class="control-checkbox">
+                            <input type="checkbox" id="hide-answered-toggle">
+                            <span class="checkbox-custom"></span>
+                            <span>Nascondi risposte date</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Tab 1: Quiz Mode -->
+                <div class="tab-content active" id="quiz-view">
+                    <!-- Current Section Banner -->
+                    <div class="current-section-banner">
+                        <span id="current-section-label">Tutte le Domande</span>
+                    </div>
+
+                    <!-- Question Container -->
+                    <div class="question-container">
+                        <!-- Top status line of the card -->
+                        <div class="question-header">
+                            <span class="question-index" id="quiz-progress-text">Domanda 0 di 0</span>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <button class="star-btn" id="star-question-btn" aria-label="Segna come difficile" title="Segna come difficile">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                    </svg>
+                                </button>
+                                <div class="badge badge-accent" id="question-status-badge">Non Risposta</div>
+                            </div>
+                        </div>
+
+                        <!-- The Question Card -->
+                        <div class="question-card" id="quiz-question-card">
+                            <h2 class="question-text" id="quiz-question-text">Seleziona una sezione o inizia il quiz per visualizzare la prima domanda.</h2>
+                            
+                            <!-- Options list -->
+                            <div class="options-grid" id="quiz-options-list">
+                                <!-- Dynamic options go here -->
+                            </div>
+                        </div>
+
+                        <!-- Feedback area (hidden until answered) -->
+                        <div class="feedback-panel hidden" id="quiz-feedback-panel">
+                            <div class="feedback-status">
+                                <span class="feedback-icon" id="feedback-icon-placeholder"></span>
+                                <span class="feedback-message" id="feedback-message-text">Risposta Corretta!</span>
+                            </div>
+                            <div class="feedback-explanation">
+                                <span class="explanation-title">La risposta corretta era:</span>
+                                <p id="feedback-correct-text"></p>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Bar -->
+                        <div class="navigation-bar">
+                            <button class="btn btn-outline" id="prev-question-btn">
+                                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                                Precedente
+                            </button>
+                            
+                            <div class="bullets-nav" id="quiz-bullets-container">
+                                <!-- Dot navigation for questions in section -->
+                            </div>
+
+                            <button class="btn btn-primary" id="next-question-btn">
+                                Successiva
+                                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Review / Complete List Mode -->
+                <div class="tab-content" id="review-view">
+                    <!-- Filters and Search Bar -->
+                    <div class="review-toolbar">
+                        <div class="search-box">
+                            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <input type="text" id="review-search-input" placeholder="Cerca tra le domande o risposte...">
+                        </div>
+                        <div class="filter-pills">
+                            <button class="pill active" data-filter="all">Tutte (<span id="count-all-p">152</span>)</button>
+                            <button class="pill" data-filter="difficult">Difficili (<span id="count-difficult-p">0</span>)</button>
+                            <button class="pill" data-filter="correct">Corrette (<span id="count-correct-p">0</span>)</button>
+                            <button class="pill" data-filter="incorrect">Errate (<span id="count-incorrect-p">0</span>)</button>
+                            <button class="pill" data-filter="unanswered">Non Risposte (<span id="count-unanswered-p">152</span>)</button>
+                        </div>
+                    </div>
+
+                    <!-- Questions List -->
+                    <div class="review-questions-list" id="review-questions-container">
+                        <!-- Dynamic list of all questions -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Data and Application Scripts -->
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
