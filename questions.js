@@ -375,7 +375,7 @@ const questionsData = [
   },
   {
     "section": "2. DIETA DEI 1000 GIORNI",
-    "question": "salute da adulto. È utile riproporre dei cibi rifiutati dai bambini?",
+    "question": "È utile riproporre dei cibi rifiutati dai bambini?",
     "options": [
       "No, anzi è meglio non riproporre un cibo rifiutato.",
       "Sì, anche a distanza di pochi giorni, fino a 10-15 volte per favorirne l'accettazione.",
@@ -672,7 +672,7 @@ const questionsData = [
   },
   {
     "section": "5. GESTIONE DELLO STILE DI VITA DEL PAZIENTE ANZIANO",
-    "question": "risultante dal declino cumulativo di sistemi fisiologici m ultipli; Con omeostenosi:",
+    "question": "Con omeostenosi:",
     "options": [
       "si definisce il declino delle riserve funzionali dell’organismo",
       "si definiscono i meccanismi che provvedono a mantenere l’equilibrio complesso degli organi e anche dell’intero organismo",
@@ -701,7 +701,7 @@ const questionsData = [
       "la massa grassa raddopia, in termini percentuali, tra i 25 e i 75 anni",
       "tutte le precedenti"
     ],
-    "correct_answer_index": 3
+    "correct_answer_index": 1
   },
   {
     "section": "5. GESTIONE DELLO STILE DI VITA DEL PAZIENTE ANZIANO",
@@ -723,7 +723,7 @@ const questionsData = [
       "sono a contrazione rapida, con moderata produzione di forza-potenza",
       "sono a contrazione molto rapida, con massima produzione di forza-potenza"
     ],
-    "correct_answer_index": 0
+    "correct_answer_index": 3
   },
   {
     "section": "5. GESTIONE DELLO STILE DI VITA DEL PAZIENTE ANZIANO",
@@ -1097,7 +1097,7 @@ const questionsData = [
       "Actinobacteria",
       "Firmicutes"
     ],
-    "correct_answer_index": 1
+    "correct_answer_index": 3
   },
   {
     "section": "6. MICROBIOTA-DISBIOSI",
@@ -1163,7 +1163,7 @@ const questionsData = [
       "I principali regolamenti europei sono: Regolamento CE n. 1925/2006 → disciplina l’aggiunta di vitamine, minerali e altre sostanze agli alimenti. Regolamento CE 1333/2008 → stabilisce le norme sugli additivi alimentari. Direttiva 2002/46/CE → regola l’etichettatura e la pubblicità degli integratori alimentari. Regolamento UE 1169/2011 (FIC) → definisce i consumi di riferimento per vitamine e minerali",
       "Non esistono regolamenti europei sugli alimenti funzionali."
     ],
-    "correct_answer_index": 1
+    "correct_answer_index": 2
   },
   {
     "section": "7. ALIMENTI FUNZIONALI",
@@ -1174,7 +1174,7 @@ const questionsData = [
       "Gli alimenti funzionali offrono diversi benefici: Rafforzano il sistema immunitario (grazie a vitamine e antiossidanti). Migliorano la salute cardiovascolare (Omega-3 e fibre riducono il colesterolo e la pressione arteriosa). Favoriscono la digestione (probiotici e fibre migliorano la flora intestinale). Gli alimenti funzionali possono sostituire completamente una dieta equilibrata.",
       "Gli alimenti funzionali offrono diversi benefici: Rafforzano il sistema immunitario (grazie a vitamine e antiossidanti). Migliorano la salute cardiovascolare (Omega-3 e fibre riducono il colesterolo e la pressione arteriosa). Favoriscono la digestione (probiotici e fibre migliorano la flora intestinale). Regolano il peso corporeo (le fibre aumentano il senso di sazietà). Prevengono malattie croniche (antiossidanti e acidi grassi insaturi riducono il rischio di diabete, ipertensione e tumori)."
     ],
-    "correct_answer_index": 1
+    "correct_answer_index": 3
   },
   {
     "section": "7. ALIMENTI FUNZIONALI",
@@ -1229,7 +1229,7 @@ const questionsData = [
       "Gli antiossidanti neutralizzano i radicali liberi, proteggendo le cellule dallo stress ossidativo e riducendo il rischio di malattie neurodegenerative, cardiovascolari e tumori. Alcuni esempi di antiossidanti e le loro fonti: Vitamina C → agrumi, kiwi, peperoni. Vitamina E → frutta secca, oli vegetali. Polifenoli → tè verde, cacao, frutti di bosco. Resveratrolo → uva nera, vino rosso. Licopene → pomodori, anguria.",
       "Gli antiossidanti neutralizzano i radicali liberi, proteggendo le cellule dallo stress lavorativo e riducendo il rischio di malattie neurodegenerative, cardiovascolari e tumori. Alcuni esempi di antiossidanti e le loro fonti: Vitamina C → agrumi, kiwi, peperoni. Vitamina E → frutta secca, oli vegetali. Polifenoli → tè verde, cacao, frutti di bosco. Resveratrolo → uva nera, vino rosso. Licopene → pomodori, anguria."
     ],
-    "correct_answer_index": 1
+    "correct_answer_index": 2
   },
   {
     "section": "8. INTEGRATORI ALIMENTARI, DISPOSITIVI MEDICI",
@@ -1251,7 +1251,7 @@ const questionsData = [
       "Gli integratori non sono soggetti a nessuna normativa specifica.",
       "Le principali normative includono: Direttiva 2002/46/CE → disciplina gli integratori alimentari a livello europeo. D.Lgs. 169/2004 → recepisce la direttiva in Italia. Regolamento CE 1924/2006 → regola le indicazioni nutrizionali e sulla salute (health claims). Regolamento UE 2015/2283 → disciplina i novel food, cioè nuovi ingredienti non consumati prima del 1997. Regolamento CE 1170/2009 → aggiorna l’elenco di vitamine e minerali ammessi. D.M. 10 agosto 2018 → stabilisce linee guida per la qualità e sicurezza degli integratori."
     ],
-    "correct_answer_index": 0
+    "correct_answer_index": 3
   },
   {
     "section": "8. INTEGRATORI ALIMENTARI, DISPOSITIVI MEDICI",
@@ -1273,7 +1273,7 @@ const questionsData = [
       "Il Regolamento 1924/2008 stabilisce che: Gli health claims devono essere scientificamente provati e approvati dall’EFSA (European Food Safety Authority). Non devono indurre in errore i consumatori. Gli integratori non possono vantare propri età curative o preventive delle malattie (competenza esclusiva dei farmaci). Devono riportare indicazioni chiare e veritiere, es. \"Il calcio contribuisce alla normale funzione muscolare\", ma non \"Il calcio cura l’osteoporosi\".",
       "Il Regolamento 1924/2006 stabilisce che: Gli health claims devono essere scientificamente provati e approvati dall’EFSA (European Food Safety Authority). Non devono indurre in errore i consumatori. Gli integratori non possono vantare proprietà curative o preventive delle malattie (competenza esclusiva dei farmaci). Devono riportare indicazioni chiare e veritiere, es. \"Il calcio contribuisce alla normale funzione muscolare\", ma non \"Il calcio cura l’osteoporosi\"."
     ],
-    "correct_answer_index": 0
+    "correct_answer_index": 3
   },
   {
     "section": "8. INTEGRATORI ALIMENTARI, DISPOSITIVI MEDICI",
@@ -1321,7 +1321,7 @@ const questionsData = [
   },
   {
     "section": "8. INTEGRATORI ALIMENTARI, DISPOSITIVI MEDICI",
-    "question": "I dispositivi medici possono avere un’azione fisica (barriera, lubrificazione), gli integratori no. Cos’è la nutrizione artificiale e quali sono le sue principali modalità di somministrazione?",
+    "question": "Cos’è la nutrizione artificiale e quali sono le sue principali modalità di somministrazione?",
     "options": [
       "La nutrizione parenterale consiste nell’assumere integratori proteici. Esistono due tipi principali: Nutrizione enterale (NE) → Somministrazione tramite sondino gastrico o PEG. Nutrizione parenterale (NP) → Nutrienti forniti direttamente nel sangue tramite catetere venoso centrale.",
       "La nutrizione artificiale è un trattamento medico per chi non può alimentarsi normalmente. Esistono due tipi principali: Nutrizione enterale (NE) → Somministrazione tramite sondino gastrico o PEG. Nutrizione parenterale (NP) → Nutrienti forniti direttamente nel sangue tramite catetere venoso centrale.",
@@ -1350,7 +1350,7 @@ const questionsData = [
       "E' una reazione esoergonica",
       "Produce energia in assenza di Ossigeno"
     ],
-    "correct_answer_index": 1
+    "correct_answer_index": 2
   },
   {
     "section": "9. INTERPRETAZIONE DELLE ANALISI EMATOCHIMICHE",
@@ -1394,7 +1394,7 @@ const questionsData = [
       "IFG>100mg/dL + PCR>40mg/L + Insulina > 10 microU/mL",
       "IFG > 100mg/dL + Trigliceridi >150mg/dL"
     ],
-    "correct_answer_index": 3
+    "correct_answer_index": 0
   },
   {
     "section": "9. INTERPRETAZIONE DELLE ANALISI EMATOCHIMICHE",
